@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisión bibliográfica viva</title>
+<meta name="description" content="Proyecto final Vibe Coding CEDIA 2026: revisión bibliográfica viva sobre el impacto de la IA en el aprendizaje de jóvenes. Anaí Oñate (UTE) y Juan Carlos Torres (UTPL).">
+<style>
+  :root {
+    --bg: #f7f6f2; --surface: #ffffff; --text: #1d1d1b; --muted: #5c5c57;
+    --border: #dddbd3; --accent: #1f4e79; --accent-soft: #e6eef6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141513; --surface: #1d1f1c; --text: #ecebe6; --muted: #a9a8a1;
+      --border: #33352f; --accent: #8ab8e6; --accent-soft: #1f2a35;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 980px; margin: 0 auto; padding: 40px 16px 64px; }
+  header p.kicker { margin: 0; color: var(--accent); font-weight: 600; letter-spacing: .02em; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; margin: 6px 0 10px; }
+  h2 { font-size: 1.3rem; margin: 40px 0 14px; }
+  .lead { font-size: 1.1rem; color: var(--muted); max-width: 70ch; margin: 0; }
+  .authors { margin-top: 14px; font-weight: 500; }
+  .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  video { display: block; width: 100%; background: #000; aspect-ratio: 16 / 9; }
+  figcaption { padding: 12px 16px; font-weight: 600; }
+  figcaption span { display: block; font-weight: 400; color: var(--muted); font-size: .9rem; }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+  .steps li { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+  .steps b { display: block; color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--accent-soft); font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  a { color: var(--accent); }
+  .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .downloads a { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-decoration: none; color: var(--text); }
+  .downloads a:hover { border-color: var(--accent); }
+  .downloads small { display: block; color: var(--muted); }
+  .note { color: var(--muted); font-size: .92rem; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; }
+  @media (max-width: 600px) { th, td { padding: 8px 10px; } .table-wrap { overflow-x: auto; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="kicker">Proyecto final · Vibe Coding CEDIA 2026 · Guía 10</p>
+    <h1>Revisión bibliográfica viva: búsqueda automática, decisión humana</h1>
+    <p class="lead">Una revisión de literatura envejece desde el día en que se entrega. Este registro la mantiene al día: cada semana importa 15 artículos nuevos, detecta duplicados por DOI, la IA sugiere pertinencia citando el resumen y solo entra lo que aprueban los dos revisores.</p>
+    <p class="authors">Anaí Oñate (UTE) · Juan Carlos Torres (UTPL)</p>
+  </header>
+
+  <h2>Videos</h2>
+  <div class="videos">
+    <figure>
+      <video controls preload="metadata" src="videos/revision-viva_ES.mp4"></video>
+      <figcaption>Español<span>Revisión de literatura viva · proyecto final</span></figcaption>
+    </figure>
+    <figure>
+      <video controls preload="metadata" src="videos/living-review_EN.mp4" lang="en"></video>
+      <figcaption>English<span>Living literature review · final project</span></figcaption>
+    </figure>
+  </div>
+  <p class="note">Narración generada con voz de IA (ElevenLabs) y revisada por los autores.</p>
+
+  <h2>Pregunta</h2>
+  <p>¿Cuál ha sido el impacto del uso de herramientas de inteligencia artificial en las capacidades de aprendizaje de adolescentes y jóvenes de 12 a 29 años? Artículos de revista con DOI, en inglés o español, desde 2020, buscados en Scopus y OpenAlex (que agrega SciELO, Redalyc y DOAJ).</p>
+
+  <h2>Cómo funciona</h2>
+  <ol class="steps">
+    <li><b>1. Protocolo</b>Las personas fijan pregunta, criterios y fuentes.</li>
+    <li><b>2. Búsqueda</b>Los scripts traen 15 artículos y comparan DOI normalizados.</li>
+    <li><b>3. Sugerencia</b>La IA propone incluir o excluir y cita el resumen.</li>
+    <li><b>4. Decisión</b>Dos revisores deciden; entra solo lo que ambos aprueban.</li>
+    <li><b>5. Síntesis</b>Historial fechado y síntesis que separa resumen de texto completo.</li>
+  </ol>
+
+  <h2>Qué hace la IA y qué hacen las personas</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Etapa</th><th>IA</th><th>Código, sin IA</th><th>Personas</th></tr></thead>
+    <tbody>
+      <tr><td>Búsqueda y duplicados</td><td>Nada</td><td>Consulta Scopus y OpenAlex; compara DOI y señala títulos parecidos</td><td>Definen cadenas y revisan alertas</td></tr>
+      <tr><td>Pertinencia</td><td>Sugiere con justificación y cita del resumen</td><td>—</td><td>Leen y deciden; la sugerencia no es voto</td></tr>
+      <tr><td>Decisión</td><td>Nada</td><td>Mueve el registro solo si ambos coinciden</td><td>Aprueban o rechazan con motivo</td></tr>
+      <tr><td>Síntesis</td><td>Redacta citando cada registro</td><td>La registra en el libro</td><td>Comprueban las citas en la fuente</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Evidencia del primer lote</h2>
+  <p>15 artículos nuevos de 16 evaluados · 10 aprobados y 5 rechazados por consenso · 7 de 15 verificados en Scopus por DOI.</p>
+
+  <h2>Descargas</h2>
+  <div class="downloads">
+    <a href="presentaciones/VC-2026-004-100_ProyectoFinal_ES.pptx">Presentación (ES)<small>PowerPoint · 10 diapositivas</small></a>
+    <a href="presentaciones/VC-2026-004-100_ProyectoFinal_EN.pptx">Presentation (EN)<small>PowerPoint · 10 slides</small></a>
+    <a href="documentos/Nota_metodologica_2026-10-11.docx">Nota metodológica<small>Word · 11/10/2026</small></a>
+    <a href="skill/revision-viva-ia-aprendizaje-jovenes.zip">Skill de Claude<small>Zip · scripts, protocolo y procedimiento</small></a>
+  </div>
+
+  <footer>
+    Curso Vibe Coding CEDIA 2026 · UTE y UTPL. Sin datos personales de estudiantes: el registro solo contiene metadatos y resúmenes públicos de artículos.
+  </footer>
+</main>
+</body>
+</html>
